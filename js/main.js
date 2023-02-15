@@ -1,5 +1,3 @@
-// Counter
-
 var myText = document.querySelector('textarea');
 
 var counter = document.querySelector('.counter span');
@@ -11,28 +9,8 @@ myText.addEventListener("input", function() {
     counter.innerHTML = num;
 })
 
-// Jauges
-
 // Toutes les jauges
 var allGauges = document.querySelectorAll('.inner');
-
-// Joie
-var innerJoy = document.querySelector('.joy .inner');
-
-// Tristesse
-var innerSad = document.querySelector('.sadness .inner');
-
-// Surprise
-var innerSurprise = document.querySelector('.surprise .inner');
-
-// Peur
-var innerFear = document.querySelector('.fear .inner');
-
-// Colère
-var innerAnger = document.querySelector('.anger .inner');
-
-// Dégoût
-var innerDisgust = document.querySelector('.disgust .inner');
 
 // API key
 const options = {
@@ -58,26 +36,48 @@ button.addEventListener("click", function() {
 // I am sad because i fear too much for my future.
 
 function displayEmotions(response) {
+    console.log(response);
     detected.innerHTML = `
         <h3>Emotions detected: ${response.emotions_detected.length}</h3>    
     `;
+    response.emotions_detected.forEach(function(emotion) {
+        detected.innerHTML += `
+            <p>${emotion}</p>
+        `;
+    })
     const emotions = Object.keys(response.emotion_scores);
     emotions.forEach((emotion) => {
         const score = Math.round(response.emotion_scores[emotion]*100) + "%";
         allGauges.forEach(function(gauge) {
-            if (gauge.dataset.emotion == emotion && parseInt(score) >= 10) {
+            if (gauge.dataset.emotion == emotion) {
                 gauge.style.width = score;
+                gauge.parentElement.nextElementSibling.innerHTML = score;
             }
         })
-        if (score != "0%") {
-            detected.innerHTML += `
-                <p>${emotion}: ${score}</p>
-            `;
-        }
     });
 }
 
 // failure
+
+// // Joie
+// var innerJoy = document.querySelector('.joy .inner');
+
+// // Tristesse
+// var innerSad = document.querySelector('.sadness .inner');
+
+// // Surprise
+// var innerSurprise = document.querySelector('.surprise .inner');
+
+// // Peur
+// var innerFear = document.querySelector('.fear .inner');
+
+// // Colère
+// var innerAnger = document.querySelector('.anger .inner');
+
+// // Dégoût
+// var innerDisgust = document.querySelector('.disgust .inner');
+
+// && parseInt(score) >= 10
 
 // var joyScore = Math.round(response.emotion_scores.joy * 100) + "%";
 //     console.log(joyScore);
