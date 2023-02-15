@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer async></script>
+    <title>Document</title>
+</head>
+<body>
+   <div class="container">
+       <h1><i class="fa-brands fa-twitter"></i> Take the emotional temperature of your tweets before you send them.</h1>
+       <div class="analyzer">
+            <div class="input">
+                <textarea name="" id="" placeholder="Write your tweet here." maxlength="280"></textarea>
+                <div class="counter">
+                    <span>0</span>/280 characters
+                </div>
+            </div>
+            <div class="output">
+                <!-- sentiment -->
+                <!-- <div class="sentiment">
+                    <div class="outer">
+                        <div class="inner"></div>
+                    </div>
+                </div> -->
+                <!-- joy -->
+                <div class="joy">
+                    <h2>
+                        <i class="fa-regular fa-face-smile-beam"></i> joy
+                    </h2>
+                    <div class="outer">
+                        <div class="inner" data-emotion="joy"></div>
+                    </div>
+                    <span>0%</span>
+                </div>
+                <!-- sadness -->
+                <div class="sadness">
+                    <h2>
+                        <i class="fa-regular fa-face-sad-cry"></i> sadness
+                    </h2>
+                    <div class="outer">
+                        <div class="inner" data-emotion="sadness"></div>
+                    </div>
+                    <span>0%</span>
+                </div>
+                <!-- surprise -->
+                <div class="surprise">
+                    <h2>
+                        <i class="fa-regular fa-face-surprise"></i> surprise
+                    </h2>
+                    <div class="outer">
+                        <div class="inner" data-emotion="surprise"></div>
+                    </div>
+                    <span>0%</span>
+                </div>
+                <!-- fear -->
+                <div class="fear">
+                    <h2>
+                        <i class="fa-solid fa-spider"></i> fear
+                    </h2>
+                    <div class="outer">
+                        <div class="inner" data-emotion="fear"></div>
+                    </div>
+                    <span>0%</span>
+                </div>
+                <!-- anger -->
+                <div class="anger">
+                    <h2>
+                        <i class="fa-regular fa-face-angry"></i> anger
+                    </h2>
+                    <div class="outer">
+                        <div class="inner" data-emotion="anger"></div>
+                    </div>
+                    <span>0%</span>
+                </div>
+                <!-- disgust -->
+                <div class="disgust">
+                    <h2>
+                        <i class="fa-solid fa-poop"></i> disgust
+                    </h2>
+                    <div class="outer">
+                        <div class="inner" data-emotion="disgust"></div>
+                    </div>
+                    <span>0%</span>
+                </div>
+            </div>
+       </div>
+       <button>Analyze</button>
+       <div class="detected"></div>
+   </div>
+   <script src="https://kit.fontawesome.com/8f9223cc2c.js" crossorigin="anonymous"></script> 
+</body>
+</html>
